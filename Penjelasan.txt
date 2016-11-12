@@ -1,3 +1,5 @@
+OVERVIEW
+---------------------------------------------
 Aplikasi ini kemungkinan bersifat server side :
 -user ga terbebani untuk akses datanya
 -tapi, kerja server akan melambat jika banyak user yang mengakses
@@ -5,3 +7,27 @@ Aplikasi ini kemungkinan bersifat server side :
 Keamanan password terjamin, menggunakan hashing (md5)
 -password dienkrip satu arah, tidak dapat didekripsi
 -untuk membandingkannya, password yang dibandingkan juga dienkripsi menggunakan md5 dan dibandingkan dengan yang di database
+
+SIMPLE LOGIC
+---------------------------------------------
+logikanya :
+0. umum
+-untuk ngurusin status user / admin, manual dari database
+
+1.user sign up (sesuai format)
+-kalau ada kurang kurang, insyaallah handler nya udah cukup
+-kalau email nya udah terdaftar, gabisa sign up
+-setiap yg baru buat status defaultnya "USER" bukan "ADMIN"
+
+2. user sign in(sesuai email + pass)
+-terdaftar nya sebagai admin ya login masuk ke homeadmin
+-terdaftarnya sebagai user ya login masuk ke landingpage
+-belum nemu eror session yang aneh aneh, insyallah udah kehandle hampir semua
+
+3. sekuritas
+-md5, powerful tapi cuma searah
+-belum ada fasilitas kalau user lupa password, itu mah ntar aja yang penting ini dulu
+
+4. database
+-paling kepikirannya server side aja
+-bisa sih buat table baru isinya event-event. ntar aja
