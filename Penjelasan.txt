@@ -1,0 +1,7 @@
+Aplikasi ini kemungkinan bersifat server side :
+-user ga terbebani untuk akses datanya
+-tapi, kerja server akan melambat jika banyak user yang mengakses
+
+Keamanan password terjamin, menggunakan hashing (md5)
+-password dienkrip satu arah, tidak dapat didekripsi
+-untuk membandingkannya, password yang dibandingkan juga dienkripsi menggunakan md5 dan dibandingkan dengan yang di database
