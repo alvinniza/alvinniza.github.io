@@ -1,16 +1,21 @@
 <?php
-  
-	header("refresh:1;url=login.php");
-	
-    session_start();
-	session_destroy();
-	setcookie("PHPSESSID",session_id(),time()-1);
+@session_start();
+include "conn.php";
 
-?>
+if(@$_SESSION['admin']){
+	header("Location: landingpage.php");
+}
+else if(@$_SESSION['user']){
+	header("Location: landingpage.php");
+}
+?>	
 
 <!doctype html>
 <html>
 <head>
+
+	<meta http-equiv=REFRESH CONTENT=1.5;url='start.php'>
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -18,18 +23,16 @@
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     
 
-<title>LOGOUT</title>
+<title>Splash</title>
 </head>
 
-<body>
+<body class="grad">
     
-<nav class="noshadow">
-    <div class="white nav-wrapper">
-        <a href="#" class="black-text brand-logo light">LOG OUT</a>
+    <div class="logo">
+    <img src="img/logo.png" class=""> 
     </div>
-</nav> 
+    
+    
+</body>
+</html>
 
- <div class="container">
- <p style="text-align:center">Logged out successfully</p>
-	</div>
-	

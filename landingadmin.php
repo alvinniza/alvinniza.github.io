@@ -5,9 +5,9 @@
 	if($_SESSION['user'] || $_SESSION['admin'])
 	{
 		$sql = "SELECT * FROM users where email='$email'";
-		$result = $db->query($sql);
-		$num = $result->num_rows;
-		$row = $result->fetch_assoc();
+		$result = mysqli_query($db, $sql);
+		$num = mysqli_num_rows($result);
+		$row = mysqli_fetch_assoc($result);
 		?>
 
 <!doctype html>
@@ -62,13 +62,14 @@
  <div class="container">        
       
 	 <?php
-		$sql = "SELECT * FROM event WHERE status = 'Valid' order by tanggal asc";
-		$result = $db->query($sql);
-		$num = $result->num_rows;
+		$sql = "SELECT * FROM event order by tanggal asc";
+		$result = mysqli_query($db, $sql);
+		$num = mysqli_num_rows($result);
+	
 		
 		//$row = mysqli_fetch_assoc($result);
 		//if($row > 0){
-		while($row = $result->fetch_assoc()){
+		while($row = mysqli_fetch_array($result)){
 			
 			$_SESSION['row'] = $row;
 			

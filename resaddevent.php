@@ -1,12 +1,12 @@
 <?php
-  
-	header("refresh:1;url=login.php");
-	
-    session_start();
-	session_destroy();
-	setcookie("PHPSESSID",session_id(),time()-1);
+	@session_start();
+	include "conn.php";
 
-?>
+	if($_SESSION['user'] || $_SESSION['admin'])
+	{
+		header("refresh:1;url=landingpage.php");
+		
+		?>
 
 <!doctype html>
 <html>
@@ -18,18 +18,25 @@
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     
 
-<title>LOGOUT</title>
+<title>EVENT INSERTED SUCCESSFULLY</title>
 </head>
 
 <body>
     
 <nav class="noshadow">
     <div class="white nav-wrapper">
-        <a href="#" class="black-text brand-logo light">LOG OUT</a>
+        <a href="#" class="black-text brand-logo light">EVENT</a>
     </div>
 </nav> 
 
  <div class="container">
- <p style="text-align:center">Logged out successfully</p>
+ <p style="text-align:center">New event inserted successfully</p>
+ <p style="text-align:center">Please wait while our team review your event</p>
 	</div>
-	
+<?php
+	}
+	else
+	{
+		header("location:login.php");
+	}
+?>
