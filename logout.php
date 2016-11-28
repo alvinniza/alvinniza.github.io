@@ -23,13 +23,21 @@
 
 <body>
     
-<nav class="noshadow">
-    <div class="white nav-wrapper">
-        <a href="#" class="black-text brand-logo light">LOG OUT</a>
-    </div>
-</nav> 
+
 
  <div class="container">
- <p style="text-align:center">Logged out successfully</p>
+    
+ <div class="preloader-wrapper big active abscenter">
+    <div class="spinner-layer spinner-green-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
 	</div>
 	
+    </body>

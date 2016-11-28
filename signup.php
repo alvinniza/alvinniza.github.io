@@ -40,10 +40,10 @@ else if(@$_SESSION['user']){
         
 <form method="post" action="" name="regform" onsubmit="return validate()">
 Email <br> <input type="text" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br>
-Nama Lengkap <br> <input type="text" name="nama" required><br> 
+Nama Lengkap <br> <input type="text" name="nama" required pattern="[a-zA-Z][a-zA-Z ]{4,}"><br> 
 Password <br><input type="password" name="password" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="UpperCase, LowerCase, Number/SpecialChar and min 8 Chars"><br>
 Konfirmasi Password <br><input type="password" name="confpassword"><br>
-<p id="passw_error"></p><br>
+<p id='passw_error' class='center red-text mt'></p><br>
 <button class="btn btn-center green white-text" type="submit" name="signup">SIGN UP </button>    
     
 </form>
@@ -74,7 +74,7 @@ if(isset($_POST["signup"])){
 		header("Location:login.php");
 	}
 	else{
-		echo 'Email already registered! Please try again with another';
+		echo "<p class='center red-text mt'>".'Email already registered! Please try again with another'."</p>";
 	}
 }
 ?>

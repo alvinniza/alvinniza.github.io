@@ -29,7 +29,6 @@
 <ul id="dropdown1" class="dropdown-content">
   <li><a href="editprofile.php">Edit Profile</a></li>
   <li><a href="#!">Setting</a></li>
-  <li><a href="logout.php">Sign out</a></li>
 </ul>    
     
 <nav class="noshadow">
@@ -43,7 +42,8 @@
     
    <div class="teal section">
               <div class="clearfix center">
-              <img src="img/fotoprofil.jpg" class="pp2 circle">             
+			  <img src="<?php if($row['image']==null){ echo 'profpic/default.jpg';} else{ echo 'profpic/'.$row['image'];} ?>"
+			  class="pp circle"></img>
               <h5 class="mb center-align white-text"><b><?php echo ''.$row['name'];?></b></h5>
               </div>
               </div>
@@ -72,7 +72,7 @@
 			<div class="card horizontal">
 			<div class="card-image">
 			<a href="detailevent.php?idn=<?php echo ''.$row['id_event'];?>">
-			<img src="img/band.jpg">
+			<img src="<?php if($row['poster']==null){ echo 'evnt/default.png';} else{ echo 'evnt/'.$row['poster'];} ?>">
             </a>
             </div>
             <div class="card-stacked">
@@ -106,7 +106,7 @@
 			<div class="card horizontal">
 			<div class="card-image">
 			<a href="detailevent.php?idn=<?php echo ''.$row['id_event'];?>">
-			<img src="img/band.jpg">
+			<img src="<?php if($row['poster']==null){ echo 'evnt/default.png';} else{ echo 'evnt/'.$row['poster'];} ?>">
             </a>
             </div>
             <div class="card-stacked">

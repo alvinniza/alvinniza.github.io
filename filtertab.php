@@ -58,7 +58,7 @@
 			<div class="card horizontal">
 			<div class="card-image">
 			<a href="detailevent.php?idn=<?php echo ''.$row['id_event'];?>">
-			<img src="img/band.jpg">
+			<img src="<?php if($row['poster']==null){ echo 'evnt/default.png';} else{ echo 'evnt/'.$row['poster'];} ?>">
             </a>
             </div>
             <div class="card-stacked">
@@ -79,7 +79,7 @@
     <!--Isi Tab 2-->    
     <div id="tab2" class="col s12">
 		<?php
-		$sql = "SELECT * FROM event Where status='Valid' ORDER BY id_event DESC LIMIT 10";
+		$sql = "SELECT * FROM event Where status='Valid' ORDER BY tgl limit 5";
 		
 		$result = $db->query($sql);
 		$num2 = $result->num_rows;
@@ -92,7 +92,7 @@
 			<div class="card horizontal">
 			<div class="card-image">
 			<a href="detailevent.php?idn=<?php echo ''.$row['id_event'];?>">
-			<img src="img/band.jpg">
+			<img src="<?php if($row['poster']==null){ echo 'evnt/default.png';} else{ echo 'evnt/'.$row['poster'];} ?>">
             </a>
             </div>
             <div class="card-stacked">
@@ -124,7 +124,7 @@
 			<div class="card horizontal">
 			<div class="card-image">
 			<a href="detailevent.php?idn=<?php echo ''.$row['id_event'];?>">
-			<img src="img/band.jpg">
+			<img src="<?php if($row['poster']==null){ echo 'evnt/default.png';} else{ echo 'evnt/'.$row['poster'];} ?>">
             </a>
             </div>
             <div class="card-stacked">
@@ -145,6 +145,7 @@
    
     <!--Isi Tab 4-->    
     <div id="tab4" class="col s12">
+		<form class="col s12" method="post" action="">
 		<div class="row">
         <div class="col s12 m7">
           <div class="card zeromarg">
@@ -157,24 +158,19 @@
                       <div class="collapsible-body">
                           <form action="#">
                     <p>
-                      <input class="with-gap" name="dateradio" type="radio" id="alldate"  />
+                      <input class="with-gap" name="dateradio" type="radio" id="alldate" value='alldate' />
                       <label for="alldate">All Dates</label>
                     </p>
                         <p>
-                      <input class="with-gap" name="dateradio" type="radio" id="today"  />
+                      <input class="with-gap" name="dateradio" type="radio" id="today"  value='today'/>
                       <label for="today">Today</label>
                     </p>
                         <p>
-                      <input class="with-gap" name="dateradio" type="radio" id="bsk"  />
+                      <input class="with-gap" name="dateradio" type="radio" id="bsk" value='bsk'/>
                       <label for="bsk">Tomorrow</label>
                     </p>
                         <p>
-                      <input class="with-gap" name="dateradio" type="radio" id="wkd"  />
-                      <label for="wkd">Weekend</label>
-                    </p>
-
-                        <p>
-                         <input class="with-gap" name="dateradio" type="radio" id="pd"  />
+                         <input class="with-gap" name="dateradio" type="radio" id="pd" />
                             <label for="pd">Choose tanggal</label>
                             </p>
                         
@@ -182,7 +178,7 @@
                              <input type="date" class="datepicker"> to <input type="date" class="datepicker"> 
                             </div>
                   </form>                        
-				  <input type="submit" class="btn btn-center green white-text"  name="save" value="SAVE"><br>
+				  <input type="submit" class="btn btn-center green white-text"  name="filter" value="FILTER"><br>
                         </div>    
                     
                     </li>
@@ -192,12 +188,12 @@
           </div>
         </div>
       </div>
+	  </form>
+	</div>
 	</div>
    
    
- <div class="container">        
-
-     
+ <div class="container">          
      
 </div>
        

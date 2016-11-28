@@ -56,13 +56,13 @@
 <div class="parallax-container">
     
      
-    <a href="landingpage.php" class="mi white-text left"><i class="material-icons">arrow_back</i></a>
+    <a href="javascript:history.go(-1)" class="mi white-text left"><i class="material-icons">arrow_back</i></a>
       <a href="#" class="mi white-text right"><i class="material-icons">notifications</i></a>
     
      <div class="bottom"><a href="#" class="white-text"><i class="material-icons">person</i></a><p class="nomarg white-text">1250</p>
     </div>
   
-    <div class="parallax"><img src="img/food.jpg">    
+    <div class="parallax"><img src="<?php if($row['poster']==null){ echo 'evnt/default.png';} else{ echo 'evnt/'.$row['poster'];} ?>">    
     </div>
 
     

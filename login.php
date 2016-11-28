@@ -37,23 +37,7 @@ else if(@$_SESSION['user']){
   
         
 <form method="post" action="">
-Email <br> <input type="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-	value=""
-	
-	<?php /*include "conn.php";$sql = "SELECT email FROM history group by (id) desc limit 1";
-	$result = mysqli_query($db, $sql);
-	$num = mysqli_num_rows($result);
-	$row = mysqli_fetch_assoc($result);
-	if($num == 1){
-		echo ''.$row['email'];
-	}
-	else{
-		echo "";
-	}*/
-	?>
-	
-	><br>
-
+Email <br> <input type="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value=""><br>
 Password <br><input type="password" name="password" required><br>
 
 <!-- <button class="btn btn-center green white-text" type="submit" name="signin">LOG IN </button>     -->
@@ -90,7 +74,7 @@ Password <br><input type="password" name="password" required><br>
 				}
 			}
 			else{
-				echo "Login gagal";
+				echo "<p class='center red-text mt'>".'The password you entered is incorrect'."</p>";
 			}
 		}
 	}

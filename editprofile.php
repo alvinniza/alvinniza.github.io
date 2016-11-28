@@ -28,25 +28,17 @@
 
 <nav class="noshadow">
     <div class="teal nav-wrapper">
-        <a href="yourevent.php" class="white-text left brand-logo"><i class="material-icons">arrow_back</i></a>
+        <a href="landingpage.php" class="white-text left brand-logo"><i class="material-icons">arrow_back</i></a>
         <!-- <a href="#" class="mi2 white-text right">SAVE</a> -->
     </div>
 </nav> 
-    
-    
-    
    <div class="teal section">
               <div class="mb3 clearfix center">
-              <img src="img/fotoprofil.jpg" class="pp3 circle"> 
-                <a class="ppbutton btn-floating btn-small waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
+			  <img src="<?php if($row['image']==null){ echo 'profpic/default.jpg';} else{ echo 'profpic/'.$row['image'];} ?>" class="pp3 circle"></img>
+                <a class="ppbutton btn-floating btn-small waves-effect waves-light orange" href="imgupload.php"><i class="material-icons">mode_edit</i></a>
               </div>
-                    
-    
-    
     </div>
     
-    
-
     <div class="row mb3 mt3">
     <form class="col s12" method="post" action="">
       <div class="row">
@@ -66,7 +58,6 @@
           <label for="hp">Phone Number</label>
         </div>
           <input type="submit" class="btn btn-center green white-text"  name="save" value="SAVE">
-          
         </div>
     </form>
 	<?php

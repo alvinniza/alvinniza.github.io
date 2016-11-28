@@ -4,8 +4,8 @@
 
 	if($_SESSION['user'] || $_SESSION['admin'])
 	{
-		header("refresh:1;url=editprofile.php");
-		
+		header("refresh:0.25;url=editprofile.php");
+
 		?>
 
 <!doctype html>
@@ -16,23 +16,29 @@
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    
+
 
 <title>PROFILE UPDATED SUCCESSFULLY</title>
 </head>
 
 <body>
-    
-<nav class="noshadow">
-    <div class="white nav-wrapper">
-        <a href="#" class="black-text brand-logo light">PROFILE UPDATED SUCCESSFULLY</a>
-    </div>
-</nav> 
+
 
  <div class="container">
- <p style="text-align:center">Edit profile updated successfully</p>
- <p style="text-align:center">Redirecting you back to edit profile page</p>
+
+ <div class="preloader-wrapper big active abscenter">
+    <div class="spinner-layer spinner-green-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
 	</div>
+
 <?php
 	}
 	else
